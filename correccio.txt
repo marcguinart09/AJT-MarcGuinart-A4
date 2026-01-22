@@ -1,0 +1,62 @@
+Exercici 1: 1,9/2
+
+        #apartat 1
+        import math
+        
+        def ct(c0,k,t):
+            ct = c0 * math.exp(-k*t)
+            print(f"la concentració en el temps {t} és de {ct}")
+        
+        c0=int(input("Escriu la concentració inicial"))
+        k=int(input("Escriu la constant de velocitat"))
+        t=int(input("Escriu el temps inicial"))
+        
+        ct(c0,k,t)
+
+Un parell de comentaris:
+  - Aquestes variables, C0, K, i fins i tot t; no tenen perquè ser variables enteres. Per aquest motiu, seria millor fer "float(input(...))"
+  - Segon, amb aquest tipus de problemes, no cal que et liis a utilitzar la funció input. Pots deixar els paràmetres inserits manualment, de l'estil:
+    c0 = 20
+    k = 0.4
+    t = 25
+
+              #apartat 2
+            c0=200
+            k=3
+            t=0
+            for n in range (0,26):
+                ct(c0,k,t)
+                t+=1
+    - Finalment, fixa't que estàs fent un "for" que s'itera en la variable "n" en range(0,26). 
+    Hauries pogut utilitzar exactament aquesta variable "n" per passar-la a ct. (o , equivalentment, dir-li "t" enlloc de "n").
+
+Exercici 2. 2/2
+
+Exercici 3. 1,75/2
+Vigila perquè aquesta funció falla per al cas "n=1" i "n=0".
+
+    #apartat 1
+    def fibonacci(n):
+        succ = [0 for num in range (0,n)]
+        succ[0] = 0
+        succ[1] = 1
+        for n in range(2,n):
+            succ[n] = succ[n-1] + succ[n-2]
+        return succ
+
+
+Exercici 4. 1,9/2
+
+      #apartat 2
+      p0 = 1000
+      r = 0.01
+      for num in range(0,365):
+          resultat = 0    -------------------> Si la fas 0 cada vegada dins del for, no et cal crear-la.
+          pob = poblacio(p0,r)
+          p0 = pob
+          resultat += pob    ---------------_> La variable "pob" al final del "for" ja té la població final. 
+      print(f"La població al cap d'un any serà de {resultat} habitants")
+
+Exercici 5. 2/2
+
+Nota: 9,6/10
